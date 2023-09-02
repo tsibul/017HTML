@@ -6,9 +6,6 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Questrial', sans-serif;
-    font-family: 'Roboto', sans-serif;
 }
 
 .no-decoration {
@@ -102,7 +99,7 @@ body {
 
 .menu-item {
     display: block;
-    padding: 26px 0px 20px 36px;
+    padding: 26px 0 20px 36px;
 }
 
 .header-right:hover .drop-menu {
@@ -609,7 +606,7 @@ body {
     }
     .catalog {
         grid-template-columns: repeat(2, 360px);
-        grid: 16px;
+        /*grid: 16px;*/
         justify-content: center;
     }
     .featured {
