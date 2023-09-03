@@ -41,10 +41,7 @@
     z-index: 3;
     &-heading {
         color: $colorPrimary900;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include text-wider(14px);
         padding-top: 32px;
         padding-bottom: 24px;
     }
@@ -53,10 +50,7 @@
         list-style: none;
         &-heading {
             color: $colorSecondary500;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include text-normal(14px);
         }
         &-item {
             padding: 10px 0 10px 19px;
@@ -81,9 +75,6 @@
 
 .number-in-cart {
     color: $colorPrimary100;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal(12px);
     padding: 0;
 }

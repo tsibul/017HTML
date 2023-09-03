@@ -20,18 +20,12 @@
     }
     &-heading {
         text-align: center;
-        font-size: 19.96px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include text-normal(20px);
         margin-bottom: 16px;
     }
     &-text {
         color: $colorPrimary100;
         text-align: center;
-        font-size: 13.972px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+        @include text-thin(14px);
     }
 }

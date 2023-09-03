@@ -2,6 +2,8 @@
 @import 'scss/mixins';
 @import 'scss/header';
 @import 'scss/main';
+@import 'scss/offer';
+@import 'scss/catalog';
 @import 'scss/feature';
 @import 'scss/footer';
 * {
@@ -21,10 +23,7 @@ body {
 .no-decoration {
     display: block;
     color: $colorPrimary300;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal(14px);
 }
 
 .container {
@@ -34,174 +33,30 @@ body {
     position: relative;
 }
 
-.offer {
-    margin-bottom: 96px;
-}
-
-.catalog {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.offer-catalog {
-    display: grid;
-    gap: 2%;
-    grid-template-columns: repeat(3, 31.9%);
-}
-
-.catalog-clause {
-    width: 100%;
-    position: relative;
-    @include d-flex-center(center);
-}
-
-.catalog-clause::before {
-    content: "";
-    display: block;
-    padding-top: 72.22222%;
-}
-
-.long {
-    grid-column: 1/4;
-    padding-top: 1.5%;
-}
-
-.long::before {
-    content: "";
-    display: block;
-    padding-top: 15.7894%;
-}
-
 .heading5 {
     color: $colorPrimary100;
     text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal (16px);
 }
 
 .heading4 {
     color: $colorSecondary500;
     text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.clause-image {
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-}
-
-.clause-text {
-    z-index: 1;
-}
-
-.catalog-clause image {
-    width: 100%;
+    @include text-wider(24px);
 }
 
 .heading3 {
     text-align: center;
     color: $colorPrimary800;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal(30px);
     margin-bottom: 3px;
 }
 
 .normal-text {
     text-align: center;
     color: #9F9F9F;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal(14px);
     margin-bottom: 48px;
-}
-
-.catalog-card {
-    position: relative;
-    display: block;
-    background-color: $colorPrimary100;
-    text-decoration: none;
-    max-height: 581px;
-}
-
-.card-shadow {
-    @include d-flex-center(center);
-    position: absolute;
-    height: 420px;
-    width: 360px;
-    background-color: rgba(58, 56, 56, 0.7);
-    z-index: -1;
-}
-
-.shadow-img {
-    color: $colorPrimary100;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border: 1px solid $colorPrimary100;
-    padding: 14px;
-    text-decoration: none;
-}
-
-.catalog-card:hover .card-shadow {
-    z-index: 1;
-}
-
-.item-img {
-    background-color: $colorSecondary100;
-    align-self: center;
-    max-height: 420px;
-    text-align: center;
-    padding-top: 10px;
-}
-
-.item-name {
-    text-align: left;
-    color: $colorPrimary900;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-bottom: 12.65px;
-    padding-top: 23.35px;
-    padding-left: 18px;
-    ;
-}
-
-.item-description {
-    text-align: left;
-    color: $colorPrimary600;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    padding-bottom: 18px;
-    padding-left: 18px;
-}
-
-.item-price {
-    text-align: left;
-    color: $colorSecondary500;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-left: 18px;
-    padding-bottom: 20px;
-}
-
-.featured {
-    margin-bottom: 63px;
 }
 
 .extra-products {
@@ -215,12 +70,9 @@ body {
     padding: 15px 39px;
     border: 1px solid $colorSecondary500;
     color: $colorSecondary500;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include text-normal(16px);
     background-color: transparent;
-    margin-bottom: 95px;
+    margin-bottom: 20px;
     &:hover {
         background-color: $colorSecondary500;
         color: $colorPrimary100;
@@ -264,7 +116,6 @@ body {
     }
     .catalog {
         grid-template-columns: repeat(2, 360px);
-        /*grid: 16px;*/
         justify-content: center;
     }
     .featured {

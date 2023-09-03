@@ -22,18 +22,12 @@
 
 .heading {
     color: $colorPrimary800;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+    @include text-wide(48px);
 }
 
 .heading-second {
     color: $colorPrimary800;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    @include text-wider(32px);
 }
 
 .pink {
