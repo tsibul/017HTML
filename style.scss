@@ -5,7 +5,9 @@
 @import 'scss/offer';
 @import 'scss/catalog';
 @import 'scss/feature';
+@import 'scss/slider';
 @import 'scss/footer';
+@import 'scss/top';
 * {
     padding: 0;
     margin: 0;
@@ -18,6 +20,10 @@ a {
 
 body {
     font-family: 'Lato', sans-serif;
+}
+
+summary::marker {
+    content: "";
 }
 
 .no-decoration {
@@ -73,6 +79,8 @@ body {
     @include text-normal(16px);
     background-color: transparent;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
     &:hover {
         background-color: $colorSecondary500;
         color: $colorPrimary100;

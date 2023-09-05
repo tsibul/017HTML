@@ -32,7 +32,7 @@
   justify-content: flex-end;
 }
 .header-right:hover .drop-menu {
-  display: block;
+  transform: scaleY(1);
 }
 
 .menu {
@@ -45,7 +45,7 @@
 }
 
 .drop-menu {
-  display: none;
+  overflow: hidden;
   width: 100%;
   max-width: 240px;
   position: absolute;
@@ -55,6 +55,9 @@
   padding-left: 32px;
   text-decoration: none;
   z-index: 3;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all 0.3s ease-out;
 }
 .drop-menu-heading {
   color: #000;
@@ -346,6 +349,128 @@
 /* Secondary */
 /* */
 /* tipography */
+.adv-window {
+  width: 100%;
+  overflow: hidden;
+  height: 780px;
+  position: relative;
+}
+.adv-window-arrow-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+.adv-window-arrow-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.slider {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: all 1s;
+}
+.slider-frame {
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  background-color: #f3eeee;
+}
+.slider-back {
+  background-color: rgba(244, 244, 244, 0.7);
+}
+.slider-image {
+  height: 100%;
+}
+.slider-previous {
+  position: absolute;
+  display: flex;
+  right: 100%;
+}
+.slider-current {
+  position: absolute;
+  display: flex;
+}
+.slider-next {
+  position: absolute;
+  display: flex;
+  left: 100%;
+}
+
+.buy-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 174px;
+}
+.buy-now-collection {
+  padding-top: 65px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #F16D7F;
+  padding-bottom: 12px;
+}
+.buy-now-divider {
+  padding-bottom: 12px;
+}
+.buy-now-header {
+  padding-bottom: 48px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.buy-now-description {
+  padding-bottom: 33px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  max-width: 555px;
+  text-align: center;
+}
+.buy-now-price {
+  padding-bottom: 130px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #EF5B70;
+}
+.buy-now-parameters {
+  text-decoration: none;
+  padding-bottom: 64px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #6F6E6E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+/* colors */
+/* Primary */
+/* Secondary */
+/* */
+/* colors */
+/* Primary */
+/* Secondary */
+/* */
+/* tipography */
 .subscribe {
   background-image: url(image/photo_subscribe.jpg);
   background-repeat: no-repeat;
@@ -466,12 +591,63 @@
   background-color: #F8F8F8;
   height: 32px;
   width: 32px;
+  transition: all 0.3s ease;
 }
 .footer-icon:hover svg path {
   fill: #F8F8F8;
 }
 .footer-icon:hover {
   background-color: #F16D7F;
+}
+
+/* colors */
+/* Primary */
+/* Secondary */
+/* */
+/* colors */
+/* Primary */
+/* Secondary */
+/* */
+/* tipography */
+.main-product {
+  background-color: #F1E4E6;
+  height: 150px;
+}
+
+.top {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-left {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #F16D7F;
+}
+.top-right {
+  display: flex;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #636363;
+}
+.breadcrumb:last-child {
+  color: #F16D7F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.breadcrumb:not(:last-child)::after {
+  content: "/";
+  padding: 0 6px;
 }
 
 * {
@@ -486,6 +662,10 @@ a {
 
 body {
   font-family: "Lato", sans-serif;
+}
+
+summary::marker {
+  content: "";
 }
 
 .no-decoration {
@@ -559,6 +739,8 @@ body {
   line-height: normal;
   background-color: transparent;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .button-browse:hover {
   background-color: #F16D7F;

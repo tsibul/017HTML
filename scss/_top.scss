@@ -1,0 +1,31 @@
+@import 'vars';
+@import 'mixins';
+.main-product {
+    background-color: $colorSecondary100;
+    height: 150px
+}
+
+.top {
+    height: 100%;
+    @include d-flex-center(space-between);
+    &-left {
+        @include text-normal(24px);
+        color: $colorSecondary500;
+    }
+    &-right {
+        display: flex;
+    }
+}
+
+.breadcrumb {
+    @include text-thin(14px);
+    color: $colorPrimary400;
+    &:last-child {
+        color: $colorSecondary500;
+        @include text-wider(14px);
+    }
+    &:not(:last-child)::after {
+        content: "/";
+        padding: 0 6px;
+    }
+}

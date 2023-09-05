@@ -92,6 +92,7 @@
         background-color: $colorPrimary100;
         height: 32px;
         width: 32px;
+        transition: all 0.3s ease;
         &:hover svg path {
             fill: $colorPrimary100;
         }
