@@ -1,67 +1,44 @@
 @import 'vars';
 @import 'mixins';
-.featured {
-    margin-bottom: 63px;
+.filter-block {
+    height: 133px;
 }
 
-.catalog {
-    display: grid;
+.filter {
+    @include d-flex-center(flex-start);
+    height: 100%;
     gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.item {
-    position: relative;
-    display: block;
-    background-color: $colorPrimary100;
-    text-decoration: none;
-    max-height: 581px;
-    &:hover .item-shadow {
-        z-index: 1;
-    }
-    &-shadow {
-        @include d-flex-center(center);
-        position: absolute;
-        height: 420px;
+    &-left {
         width: 360px;
-        background-color: rgba(58, 56, 56, 0.7);
-        z-index: -1;
-    }
-    &-name {
-        text-align: left;
+        @include d-flex-center(flex-start);
+        gap: 10px;
+        position: relative;
+        @include text-wider(14px);
         color: $colorPrimary900;
-        @include text-normal(13px);
-        padding-bottom: 13px;
-        padding-top: 23.5px;
-        padding-left: 18px;
+        &-details {
+            position: absolute;
+            width: 360px;
+            background-color: #fff;
+            z-index: 2;
+        }
+        &-category {
+            @include text-normal(14px);
+            color: $colorPrimary300;
+            padding: 18px 0;
+        }
     }
-    &-description {
-        text-align: left;
-        color: $colorPrimary600;
-        @include text-thin(14px);
-        padding-bottom: 18px;
-        padding-left: 18px;
-    }
-    &-price {
-        text-align: left;
-        color: $colorSecondary500;
-        @include text-normal(16px);
-        padding-left: 18px;
-        padding-bottom: 20px;
-    }
-    &-img {
-        background-color: $colorSecondary100;
-        align-self: center;
-        max-height: 420px;
-        text-align: center;
-        // padding-top: 10px;
+    &-right {
+        @include d-flex-center(flex-start);
+        gap: 30px;
+        @include text-normal(14px);
+        color: $colorPrimary300;
     }
 }
 
-.shadow-img {
-    color: $colorPrimary100;
-    @include text-normal(14px);
-    border: 1px solid $colorPrimary100;
-    padding: 14px;
-    text-decoration: none;
+.pagination {
+    width: 360px;
+    align-self: center;
+    @include d-flex-center(space-between);
+    @include text-thin(16px);
+    color: $colorPrimary300;
 }

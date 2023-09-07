@@ -1,13 +1,11 @@
 @import 'scss/vars';
 @import 'scss/mixins';
 @import 'scss/header';
-@import 'scss/main';
-@import 'scss/offer';
+@import 'scss/index';
+@import 'scss/catalog_block';
+@import 'scss/product';
 @import 'scss/catalog';
-@import 'scss/feature';
-@import 'scss/slider';
 @import 'scss/footer';
-@import 'scss/top';
 * {
     padding: 0;
     margin: 0;
@@ -30,6 +28,26 @@ summary::marker {
     display: block;
     color: $colorPrimary300;
     @include text-normal(14px);
+}
+
+.main {
+    margin-bottom: 65px;
+    background-color: $colorSecondary100;
+    height: 764px;
+    &-block {
+        height: 100%;
+        display: flex;
+    }
+    &-left {
+        align-items: start;
+    }
+    &-right {
+        width: 50%;
+        display: flex;
+        gap: 16px;
+        align-self: center;
+        justify-content: flex-end;
+    }
 }
 
 .container {
