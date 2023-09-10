@@ -2,17 +2,31 @@
 @import 'mixins';
 .header {
     background-color: $colorPrimary800;
+    position: relative;
     &-left {
         width: 45%;
         display: flex;
         align-items: center;
     }
     &-right {
-        position: relative;
+        // position: relative;
         align-self: self-end;
         width: 45%;
         display: flex;
         justify-content: flex-end;
+        &:last-child::after {
+            margin-top: 16px;
+            margin-left: -8px;
+            content: "5";
+            color: $colorPrimary100;
+            text-align: center;
+            @include text-normal(12px);
+            background-color: $colorSecondary500;
+            border: 1px solid transparent;
+            border-radius: 19px;
+            height: 19px;
+            width: 19px;
+        }
         &:hover .drop-menu {
             // display: block;
             transform: scaleY(1);
@@ -27,18 +41,23 @@
         display: block;
         padding: 26px 0 20px 36px;
     }
+    // &-button {
+    //     z-index: 3;
+    //     &:hover .drop-menu {
+    //         transform: scaleY(1);
+    //     }
+    // }
 }
 
 .drop-menu {
-    // display: none;
-    // height: 0;
     overflow: hidden;
-    width: 100%;
-    max-width: 240px;
+    // width: 100%;
+    width: calc((100% - 1140px) / 2);
     position: absolute;
     background-color: $colorPrimary100;
-    left: 100%;
-    top: 100%;
+    // left: 100%;
+    right: 0;
+    top: 79px;
     padding-left: 32px;
     text-decoration: none;
     z-index: 3;
@@ -66,21 +85,4 @@
 
 .logo {
     padding: 19px 5px 18px 0;
-}
-
-.in-cart {
-    @include d-flex-center(center);
-    border-radius: 19px;
-    width: 19px;
-    height: 19px;
-    background-color: $colorSecondary500;
-    position: absolute;
-    top: 16px;
-    right: -8px;
-}
-
-.number-in-cart {
-    color: $colorPrimary100;
-    @include text-normal(12px);
-    padding: 0;
 }
