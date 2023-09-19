@@ -6,6 +6,8 @@
 @import 'scss/product';
 @import 'scss/catalog';
 @import 'scss/footer';
+@import 'scss/cart';
+@import 'scss/registration';
 * {
     padding: 0;
     margin: 0;
@@ -105,6 +107,19 @@ summary::marker {
     cursor: pointer;
     &:hover {
         background-color: $colorSecondary500;
+        color: $colorPrimary100;
+    }
+}
+
+.button-neutral {
+    padding: 16px 40px;
+    border: 1px solid #A4A4A4;
+    @include text-thin(14px);
+    color: $colorPrimary900;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    &:hover {
+        background-color: #A4A4A4;
         color: $colorPrimary100;
     }
 }
