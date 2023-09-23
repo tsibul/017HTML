@@ -12,11 +12,12 @@
     &__perks {
         display: flex;
         flex-direction: column;
-        width: 652px;
+        // width: 652px;
         @include text-thin(24px);
         color: #000;
         height: 334px;
         gap: 21px;
+        margin-left: 22px;
         & h3 {
             @include text-thin(24px);
         }
@@ -32,7 +33,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 360px;
+        min-width: 360px;
     }
     &__info a {
         display: block;
@@ -87,4 +88,35 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+@media (max-width: 1144px) and (min-width: 768px) {
+    .registration-block {
+        // align-items: center;
+        padding: 40px 16px;
+        &__info {
+            width: 360px;
+        }
+        &__perks {
+            width: auto;
+            margin-left: 22px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .registration-block {
+        // width: 360px;
+        padding: 40px 8px;
+        flex-direction: column;
+        &__perks {
+            font-size: 16px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+    }
+    .top-left__registration {
+        padding-top: 36px;
+    }
 }

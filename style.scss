@@ -124,6 +124,10 @@ summary::marker {
     }
 }
 
+.mobile-view {
+    display: none;
+}
+
 @media (max-width: $dropMenuMaxWidth) {
     .drop-menu {
         width: 240px;
@@ -132,6 +136,9 @@ summary::marker {
 }
 
 @media (max-width: 1144px) and (min-width: 768px) {
+    .ipad-hide {
+        display: none;
+    }
     .menu {
         padding: 0 30px;
     }
@@ -160,7 +167,7 @@ summary::marker {
         margin-bottom: 140px;
     }
     .catalog {
-        grid-template-columns: repeat(2, 360px);
+        // grid-template-columns: repeat(2, 360px);
         justify-content: center;
     }
     .featured {
@@ -196,6 +203,9 @@ summary::marker {
 @media (max-width: 767px) and (min-width: 320px) {
     .mobile-hide {
         display: none;
+    }
+    .mobile-view {
+        display: block;
     }
     .menu {
         padding: 0 30px;

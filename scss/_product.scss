@@ -38,14 +38,14 @@
     &-arrow-left {
         position: absolute;
         left: 0;
-        top: 50%;
+        top: calc(50% - 16px);
         z-index: 2;
         cursor: pointer;
     }
     &-arrow-right {
         position: absolute;
         right: 0;
-        top: 50%;
+        top: calc(50% - 16px);
         z-index: 2;
         cursor: pointer;
     }
@@ -91,13 +91,14 @@
 
 .buy-now {
     @include d-flex-center(center);
+    background-color: #fff;
     flex-direction: column;
     margin-bottom: 174px;
     &-collection {
         padding-top: 65px;
         @include text-thin(14px);
         color: $colorSecondary500;
-        padding-bottom: 12px;
+        // padding-bottom: 12px;
     }
     &-divider {
         padding-bottom: 12px;
@@ -128,5 +129,51 @@
     &-summary {
         @include d-flex-center(flex-start);
         gap: 10px;
+    }
+}
+
+@media (max-width: 1144px) and (min-width: 768px) {
+    .top {
+        padding: 0 16px;
+    }
+    .adv-window {
+        height: 624px;
+    }
+    .slider {
+        &-frame {
+            padding: 30px 0;
+        }
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .top {
+        flex-direction: column;
+        &-left {
+            margin-top: 24px;
+        }
+        &-right {
+            margin-bottom: 46px;
+        }
+    }
+    .buy-now {
+        padding: 0 24px;
+        &-header {
+            padding-bottom: 32px;
+        }
+        &-price {
+            padding-bottom: 82px;
+        }
+        &-summary {
+            font-size: 10px;
+        }
+    }
+    .adv-window {
+        height: 624px;
+    }
+    .slider {
+        &-frame {
+            padding: 85px 0;
+        }
     }
 }
